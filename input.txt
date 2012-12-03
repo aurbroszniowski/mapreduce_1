@@ -1,0 +1,9 @@
+Ujjain	MP,77
+Bhopal	MP,76
+Indore	MP,72
+Raipur	CG,72
+Durg	CG,75
+Raigarth	CG,70
+Kendujhar	OR,69
+Bhubaneswar	OR,71
+Puri	OR,76

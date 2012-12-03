@@ -16,13 +16,13 @@ import java.util.regex.Pattern;
  *
  * @author Aurelien Broszniowski
  */
-public class TemperatureMapper extends Mapper<Text, String, Text, IntWritable> {
+public class TemperatureMapper extends Mapper<Text, Text, Text, IntWritable> {
 
   @Override
-  public void map(Text key, String value, Context context) throws IOException, InterruptedException {
-    if (isValueValid(value)) {
-      Text key2 = new Text(getStateFromValue(value));
-      IntWritable value2 = new IntWritable(getTemperatureFrom(value));
+  public void map(Text key, Text value, Context context) throws IOException, InterruptedException {
+    if (isValueValid(value.toString())) {
+      Text key2 = new Text(getStateFromValue(value.toString()));
+      IntWritable value2 = new IntWritable(getTemperatureFrom(value.toString()));
       context.write(key2, value2);
     }
   }
